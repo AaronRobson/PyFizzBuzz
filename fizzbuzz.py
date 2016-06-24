@@ -1,4 +1,4 @@
-#FizzBuzz http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html
+#!/usr/bin/python
 
 def DivisableFuncFactory(divider):
 	def Divisable(num):
