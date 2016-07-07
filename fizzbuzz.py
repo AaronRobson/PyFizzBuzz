@@ -22,7 +22,7 @@ def GenericFuncFactory(conditions, sep=None, allMatches=True):
       else:
         return output[0]
     else:
-      return num
+      return str(num)
 
   return GenericFunc
 
