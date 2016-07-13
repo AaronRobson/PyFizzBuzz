@@ -41,4 +41,3 @@ def FizzBuzzLoop(min=1, max=100, sep=None):
 if __name__ == "__main__":
   for line in FizzBuzzLoop():
     print(line)
-  input('\nPress Enter to Close:')
