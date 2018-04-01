@@ -1,11 +1,7 @@
 #!/usr/bin/python
 
 def DivisableFuncFactory(divider):
-    def Divisable(num):
-        '''Is number divisible by %d?
-        ''' % divider
-        return num % divider == 0
-    return Divisable
+    return lambda num: num % divider == 0
 
 def GenericFuncFactory(conditions, sep=None, allMatches=True):
     #Must evaluate generators as otherwise function will only work the first time; after which the generator will be finished.
