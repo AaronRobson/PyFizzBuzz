@@ -8,7 +8,7 @@ import fizzbuzz
 class TestFizzBuzz(unittest.TestCase):
 
     def test(self):
-        f = fizzbuzz.FizzBuzzFunc()
+        f = fizzbuzz.fizzBuzz
         self.assertEqual(f(1), '1')
         self.assertEqual(f(2), '2')
         self.assertEqual(f(3), 'Fizz')
