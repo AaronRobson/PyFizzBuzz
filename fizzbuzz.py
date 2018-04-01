@@ -3,7 +3,7 @@
 def DivisableFuncFactory(divider):
     return lambda num: num % divider == 0
 
-def GenericFuncFactory(conditions, sep=None, allMatches=True):
+def GenericFuncFactory(conditions, sep=None):
     #Must evaluate generators as otherwise function will only work the first time; after which the generator will be finished.
     conditions = tuple(conditions)
 
@@ -13,10 +13,7 @@ def GenericFuncFactory(conditions, sep=None, allMatches=True):
     def GenericFunc(num):
         output = tuple(value for predicate, value in conditions if predicate(num))
         if output:
-            if allMatches:
-                return sep.join(output)
-            else:
-                return output[0]
+            return sep.join(output)
         else:
             return str(num)
 
