@@ -20,12 +20,8 @@ _dividerConditions = ((3, 'Fizz'), (5, 'Buzz'))
 _conditions = ((DivisableFuncFactory(predicateNum), value) for predicateNum, value in _dividerConditions)
 fizzBuzz = GenericFuncFactory(_conditions)
 
-def GenericLoop(func, min, max):
-    min, max = sorted([min, max])
-    return (func(i) for i in range(min, max+1))
-
 def FizzBuzzLoop(min=1, max=100):
-    return GenericLoop(fizzBuzz, min, max)
+    return (fizzBuzz(i) for i in range(min, max+1))
 
 if __name__ == "__main__":
     for line in FizzBuzzLoop():
