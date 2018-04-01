@@ -17,8 +17,8 @@ def GenericFuncFactory(conditions):
     return GenericFunc
 
 _conditions = [
-    (partial(isDivisible, denomiator=3), 'Fizz'),
-    (partial(isDivisible, denomiator=5), 'Buzz')
+    (partial(isDivisible, denominator=3), 'Fizz'),
+    (partial(isDivisible, denominator=5), 'Buzz')
 ]
 fizzBuzz = GenericFuncFactory(_conditions)
 
