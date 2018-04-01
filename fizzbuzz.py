@@ -5,9 +5,6 @@ from functools import partial
 def isDivisible(numerator, denominator):
     return numerator % denominator == 0
 
-def DivisableFuncFactory(denominator):
-    return partial(isDivisible, denominator=denominator)
-
 def GenericFuncFactory(conditions):
 
     def GenericFunc(num):
@@ -19,7 +16,10 @@ def GenericFuncFactory(conditions):
 
     return GenericFunc
 
-_conditions = [(DivisableFuncFactory(3), 'Fizz'), (DivisableFuncFactory(5), 'Buzz')]
+_conditions = [
+    (partial(isDivisible, denomiator=3), 'Fizz'),
+    (partial(isDivisible, denomiator=5), 'Buzz')
+]
 fizzBuzz = GenericFuncFactory(_conditions)
 
 def FizzBuzzLoop(min=1, max=100):
