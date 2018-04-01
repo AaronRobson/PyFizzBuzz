@@ -21,9 +21,9 @@ def FizzBuzzFunc():
     conditions = ((DivisableFuncFactory(predicateNum), value) for predicateNum, value in dividerConditions)
     return GenericFuncFactory(conditions)
 
-def GenericLoop(func, min, max, step=1):
+def GenericLoop(func, min, max):
     min, max = sorted([min, max])
-    return (func(i) for i in range(min, max+1, step))
+    return (func(i) for i in range(min, max+1))
 
 def FizzBuzzLoop(min=1, max=100):
     return GenericLoop(FizzBuzzFunc(), min, max)
