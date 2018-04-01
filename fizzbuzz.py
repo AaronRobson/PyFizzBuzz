@@ -1,7 +1,12 @@
 #!/usr/bin/python
 
-def DivisableFuncFactory(divider):
-    return lambda num: num % divider == 0
+from functools import partial
+
+def isDivisible(numerator, denominator):
+    return numerator % denominator == 0
+
+def DivisableFuncFactory(denominator):
+    return partial(isDivisible, denominator=denominator)
 
 def GenericFuncFactory(conditions):
 
