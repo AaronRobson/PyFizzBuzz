@@ -6,7 +6,7 @@ def DivisableFuncFactory(divider):
 def GenericFuncFactory(conditions):
 
     def GenericFunc(num):
-        output = tuple(value for predicate, value in conditions if predicate(num))
+        output = [value for predicate, value in conditions if predicate(num)]
         if output:
             return ''.join(output)
         else:
@@ -14,7 +14,7 @@ def GenericFuncFactory(conditions):
 
     return GenericFunc
 
-_conditions = ((DivisableFuncFactory(3), 'Fizz'), (DivisableFuncFactory(5), 'Buzz'))
+_conditions = [(DivisableFuncFactory(3), 'Fizz'), (DivisableFuncFactory(5), 'Buzz')]
 fizzBuzz = GenericFuncFactory(_conditions)
 
 def FizzBuzzLoop(min=1, max=100):
