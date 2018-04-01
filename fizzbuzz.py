@@ -18,7 +18,7 @@ _conditions = [(DivisableFuncFactory(3), 'Fizz'), (DivisableFuncFactory(5), 'Buz
 fizzBuzz = GenericFuncFactory(_conditions)
 
 def FizzBuzzLoop(min=1, max=100):
-    return (fizzBuzz(i) for i in range(min, max+1))
+    return map(fizzBuzz, range(min, max+1))
 
 if __name__ == "__main__":
     for line in FizzBuzzLoop():
