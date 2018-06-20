@@ -22,5 +22,5 @@ def fizzBuzzLoop(min=1, max=100):
     return map(fizzBuzz, range(min, max+1))
 
 if __name__ == "__main__":
-    for line in FizzBuzzLoop():
+    for line in fizzBuzzLoop():
         print(line)
