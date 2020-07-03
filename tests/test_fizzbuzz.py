@@ -9,7 +9,7 @@ import fizzbuzz
 class TestFizzBuzz(unittest.TestCase):
 
     def test(self):
-        f = fizzbuzz.fizzBuzz
+        f = fizzbuzz.fizzbuzz
         self.assertEqual(f(1), '1')
         self.assertEqual(f(2), '2')
         self.assertEqual(f(3), 'Fizz')
@@ -28,7 +28,7 @@ class TestFizzBuzzLoop(unittest.TestCase):
             '4',
             'Buzz',
         ]
-        actual = take(len(expected), fizzbuzz.fizzBuzzLoop())
+        actual = take(len(expected), fizzbuzz.fizzbuzz_loop())
         self.assertEqual(expected, actual)
 
 
