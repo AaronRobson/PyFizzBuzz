@@ -3,11 +3,11 @@
 from functools import partial
 
 
-def is_divisible(numerator, denominator):
+def is_divisible(numerator: int, denominator: int) -> bool:
     return numerator % denominator == 0
 
 
-def apply_conditions(num, conditions):
+def apply_conditions(num: int, conditions) -> str:
     output = [value for predicate, value in conditions if predicate(num)]
     if output:
         return ''.join(output)

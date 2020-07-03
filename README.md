@@ -26,7 +26,7 @@ python3 fizzbuzz
 pip3 install flake8 pep8-naming
 ```
 
-### Lint
+### Lint and Type Check
 ```bash
 make check
 ```
