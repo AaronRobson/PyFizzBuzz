@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import unittest
+from unittest.mock import call, patch
 from itertools import islice
 
 import fizzbuzz
@@ -30,6 +31,19 @@ class TestFizzBuzzLoop(unittest.TestCase):
         ]
         actual = take(len(expected), fizzbuzz.fizzbuzz_loop())
         self.assertEqual(expected, actual)
+
+
+class TestMain(unittest.TestCase):
+    @patch('fizzbuzz.print')
+    def test(self, mock_patch):
+        self.assertIsNone(fizzbuzz.main())
+        self.assertEqual(mock_patch.call_args_list[0], call('1'))
+        self.assertEqual(mock_patch.call_args_list[1], call('2'))
+        self.assertEqual(mock_patch.call_args_list[2], call('Fizz'))
+        self.assertEqual(mock_patch.call_args_list[3], call('4'))
+        self.assertEqual(mock_patch.call_args_list[4], call('Buzz'))
+        self.assertEqual(mock_patch.call_args_list[14], call('FizzBuzz'))
+        self.assertEqual(mock_patch.call_count, 100, mock_patch.call_args_list)
 
 
 def take(n, iterable):
