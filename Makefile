@@ -15,7 +15,10 @@ typecheck:
 	mypy .
 
 .PHONY: test
-test:
+test: unittest
+
+.PHONY: unittest
+unittest:
 	python3 -m unittest
 
 .PHONY: run
