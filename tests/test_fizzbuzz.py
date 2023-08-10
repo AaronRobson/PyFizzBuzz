@@ -8,7 +8,6 @@ import fizzbuzz
 
 
 class TestFizzBuzz(unittest.TestCase):
-
     def test(self):
         f = fizzbuzz.fizzbuzz
         self.assertEqual(f(1), '1')
@@ -20,7 +19,6 @@ class TestFizzBuzz(unittest.TestCase):
 
 
 class TestFizzBuzzLoop(unittest.TestCase):
-
     def test(self):
         expected = [
             '1',
@@ -29,7 +27,7 @@ class TestFizzBuzzLoop(unittest.TestCase):
             '4',
             'Buzz',
         ]
-        actual = take(len(expected), fizzbuzz.fizzbuzz_loop())
+        actual = list(islice(fizzbuzz.fizzbuzz_loop(), len(expected)))
         self.assertEqual(expected, actual)
 
 
@@ -44,11 +42,6 @@ class TestMain(unittest.TestCase):
         self.assertEqual(mock_patch.call_args_list[4], call('Buzz'))
         self.assertEqual(mock_patch.call_args_list[14], call('FizzBuzz'))
         self.assertEqual(mock_patch.call_count, 100, mock_patch.call_args_list)
-
-
-def take(n, iterable):
-    "Return first n items of the iterable as a list"
-    return list(islice(iterable, n))
 
 
 if __name__ == "__main__":
