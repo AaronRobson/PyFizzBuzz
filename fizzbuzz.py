@@ -5,8 +5,7 @@ from itertools import count, islice
 
 
 def fizzbuzz(num: int) -> str:
-    output = 'Fizz' * int(num % 3 == 0) + 'Buzz' * int(num % 5 == 0)
-    return output if output else str(num)
+    return ('Fizz' * int(num % 3 == 0) + 'Buzz' * int(num % 5 == 0)) or str(num)
 
 
 def fizzbuzz_loop() -> Iterable[str]:
