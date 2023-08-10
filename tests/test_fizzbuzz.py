@@ -26,6 +26,16 @@ class TestFizzBuzzLoop(unittest.TestCase):
             'Fizz',
             '4',
             'Buzz',
+            'Fizz',
+            '7',
+            '8',
+            'Fizz',
+            'Buzz',
+            '11',
+            'Fizz',
+            '13',
+            '14',
+            'FizzBuzz',
         ]
         actual = list(islice(fizzbuzz.fizzbuzz_loop(), len(expected)))
         self.assertEqual(expected, actual)
