@@ -2,7 +2,7 @@
 
 
 def fizzbuzz(num: int) -> str:
-    output = ('Fizz' if num % 3 == 0 else '') + ('Buzz' if num % 5 == 0 else '')
+    output = 'Fizz' * int(num % 3 == 0) + 'Buzz' * int(num % 5 == 0)
     return output if output else str(num)
 
 
