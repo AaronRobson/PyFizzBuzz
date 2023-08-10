@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: check test
+all: check test run
 
 .PHONY: check
 check: lint typecheck
