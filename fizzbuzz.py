@@ -8,11 +8,8 @@ def is_divisible(numerator: int, denominator: int) -> bool:
 
 
 def apply_conditions(num: int, conditions) -> str:
-    output = [value for predicate, value in conditions if predicate(num)]
-    if output:
-        return ''.join(output)
-    else:
-        return str(num)
+    output = ''.join(value for predicate, value in conditions if predicate(num))
+    return output if output else str(num)
 
 
 _conditions = [
