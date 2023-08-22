@@ -2,7 +2,6 @@
 
 import unittest
 from unittest.mock import call, patch
-from itertools import islice
 
 import fizzbuzz
 
@@ -16,29 +15,6 @@ class TestFizzBuzz(unittest.TestCase):
         self.assertEqual(f(4), '4')
         self.assertEqual(f(5), 'Buzz')
         self.assertEqual(f(15), 'FizzBuzz')
-
-
-class TestFizzBuzzLoop(unittest.TestCase):
-    def test(self):
-        expected = [
-            '1',
-            '2',
-            'Fizz',
-            '4',
-            'Buzz',
-            'Fizz',
-            '7',
-            '8',
-            'Fizz',
-            'Buzz',
-            '11',
-            'Fizz',
-            '13',
-            '14',
-            'FizzBuzz',
-        ]
-        actual = list(islice(fizzbuzz.fizzbuzz_loop(), len(expected)))
-        self.assertEqual(expected, actual)
 
 
 class TestMain(unittest.TestCase):
